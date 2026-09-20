@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(y-lib-qrgen)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+add_library(y-qrgen SHARED module.cpp qrcodegen.cpp)
+target_include_directories(y-qrgen PRIVATE ../y---lang/include ../y---lang/src)
