@@ -1,4 +1,6 @@
+#include "qrcodegen.hpp"
 #include "ylang/vm.hpp"
+using namespace qrcodegen;
 #include <iostream>
 
 extern "C" void YlangLoadModule(std::shared_ptr<Env> env, const std::vector<std::string> &symbols) {
@@ -62,6 +64,5 @@ extern "C" void YlangLoadModule(std::shared_ptr<Env> env, const std::vector<std:
 		Value modVal;
 		modVal.type = ValueType::CLASS;
 		modVal.ref = moduleNamespace;
-		env->set("Math", modVal, false, false);
+		env->set("QRgen", modVal, false, false);
 	}
-}
